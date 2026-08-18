@@ -1,0 +1,49 @@
+{
+  "cli": {
+    "version": ">= 16.0.0",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "demo": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "channel": "demo",
+      "env": {
+        "EXPO_PUBLIC_JUVA_ENV": "demo",
+        "EXPO_PUBLIC_MARKET_MODE": "demo",
+        "JUVA_BUILD_CHANNEL": "demo"
+      }
+    },
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "channel": "development",
+      "env": {
+        "EXPO_PUBLIC_JUVA_ENV": "development",
+        "EXPO_PUBLIC_MARKET_MODE": "demo",
+        "JUVA_BUILD_CHANNEL": "development"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "channel": "preview",
+      "env": {
+        "EXPO_PUBLIC_JUVA_ENV": "preview",
+        "EXPO_PUBLIC_MARKET_MODE": "demo",
+        "JUVA_BUILD_CHANNEL": "preview"
+      }
+    },
+    "production": {
+      "autoIncrement": true,
+      "channel": "production",
+      "env": {
+        "EXPO_PUBLIC_JUVA_ENV": "production",
+        "EXPO_PUBLIC_MARKET_MODE": "demo",
+        "JUVA_BUILD_CHANNEL": "production"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}

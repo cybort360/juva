@@ -1,0 +1,10 @@
+# List creation from the natural-language composer, then the editable basket.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Use the example: Milk, eggs, rice, chicken, bread, cereal'
+- tapOn: 'Build my basket'
+- assertVisible: 'Your list'
+- assertVisible: '6 items'
+# Interpreted quantities are shown, not silently assumed.
+- assertVisible: '1 gallon'

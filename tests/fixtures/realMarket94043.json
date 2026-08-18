@@ -1,0 +1,216 @@
+{
+  "stores": [
+    {
+      "id": "open_prices:way:35603394",
+      "retailerId": "safeway",
+      "retailerName": "Safeway",
+      "displayName": "Safeway",
+      "address": "570 North Shoreline Boulevard, Mountain View, 94043",
+      "distanceMiles": 0.51,
+      "etaMinutes": 8,
+      "colorToken": "forest",
+      "latitude": 37.4030922,
+      "longitude": -122.0793193
+    }
+  ],
+  "products": [
+    {
+      "id": "open_prices:way:35603394|0041383090745|milk",
+      "canonicalConcept": "milk",
+      "storeId": "open_prices:way:35603394",
+      "title": "2% Reduced Fat Milk",
+      "brand": "Lactaid",
+      "sizeLabel": "",
+      "observation": {
+        "id": "open_prices:162899",
+        "storeId": "open_prices:way:35603394",
+        "retailerId": "safeway",
+        "retailerProductId": "0041383090745",
+        "scope": "store",
+        "priceCents": 549,
+        "currency": "USD",
+        "source": "community_feed",
+        "sourceIdentifier": "price/162899",
+        "observedAt": "2025-11-12T12:00:00.000Z",
+        "freshness": "verify",
+        "confidence": 0.8,
+        "available": true,
+        "availability": "unknown"
+      }
+    },
+    {
+      "id": "open_prices:way:35603394|0070852993249|milk",
+      "canonicalConcept": "milk",
+      "storeId": "open_prices:way:35603394",
+      "title": "Organic Whole Milk",
+      "brand": "",
+      "sizeLabel": "",
+      "observation": {
+        "id": "open_prices:163189",
+        "storeId": "open_prices:way:35603394",
+        "retailerId": "safeway",
+        "retailerProductId": "0070852993249",
+        "scope": "store",
+        "priceCents": 699,
+        "currency": "USD",
+        "source": "community_feed",
+        "sourceIdentifier": "price/163189",
+        "observedAt": "2025-11-12T12:00:00.000Z",
+        "freshness": "verify",
+        "confidence": 0.8,
+        "available": true,
+        "availability": "unknown"
+      }
+    },
+    {
+      "id": "open_prices:way:35603394|0079893982632|eggs",
+      "canonicalConcept": "eggs",
+      "storeId": "open_prices:way:35603394",
+      "title": "hard-cooked eggs",
+      "brand": "Eggland's Organics",
+      "sizeLabel": "",
+      "observation": {
+        "id": "open_prices:294993",
+        "storeId": "open_prices:way:35603394",
+        "retailerId": "safeway",
+        "retailerProductId": "0079893982632",
+        "scope": "store",
+        "priceCents": 299,
+        "currency": "USD",
+        "source": "community_feed",
+        "sourceIdentifier": "price/294993",
+        "observedAt": "2026-07-18T12:00:00.000Z",
+        "freshness": "older",
+        "confidence": 0.8,
+        "available": true,
+        "availability": "unknown"
+      }
+    },
+    {
+      "id": "open_prices:way:35603394|0021130031528|eggs",
+      "canonicalConcept": "eggs",
+      "storeId": "open_prices:way:35603394",
+      "title": "Eggs",
+      "brand": "",
+      "sizeLabel": "",
+      "observation": {
+        "id": "open_prices:158116",
+        "storeId": "open_prices:way:35603394",
+        "retailerId": "safeway",
+        "retailerProductId": "0021130031528",
+        "scope": "store",
+        "priceCents": 629,
+        "currency": "USD",
+        "source": "community_feed",
+        "sourceIdentifier": "price/158116",
+        "observedAt": "2025-10-22T12:00:00.000Z",
+        "freshness": "verify",
+        "confidence": 0.8,
+        "available": true,
+        "availability": "unknown"
+      }
+    },
+    {
+      "id": "open_prices:way:35603394|0021130118878|bread",
+      "canonicalConcept": "bread",
+      "storeId": "open_prices:way:35603394",
+      "title": "Sliced Sourdough Bread",
+      "brand": "Safeway  Inc.",
+      "sizeLabel": "",
+      "observation": {
+        "id": "open_prices:294800",
+        "storeId": "open_prices:way:35603394",
+        "retailerId": "safeway",
+        "retailerProductId": "0021130118878",
+        "scope": "store",
+        "priceCents": 549,
+        "currency": "USD",
+        "source": "community_feed",
+        "sourceIdentifier": "price/294800",
+        "observedAt": "2026-07-18T12:00:00.000Z",
+        "freshness": "older",
+        "confidence": 0.8,
+        "available": true,
+        "availability": "unknown",
+        "regularPriceCents": 649,
+        "promotionId": "open_prices:promo:294800"
+      }
+    },
+    {
+      "id": "open_prices:way:35603394|0050400032552|bread",
+      "canonicalConcept": "bread",
+      "storeId": "open_prices:way:35603394",
+      "title": "Garlic sourdough bread",
+      "brand": "",
+      "sizeLabel": "",
+      "observation": {
+        "id": "open_prices:294803",
+        "storeId": "open_prices:way:35603394",
+        "retailerId": "safeway",
+        "retailerProductId": "0050400032552",
+        "scope": "store",
+        "priceCents": 749,
+        "currency": "USD",
+        "source": "community_feed",
+        "sourceIdentifier": "price/294803",
+        "observedAt": "2026-07-18T12:00:00.000Z",
+        "freshness": "older",
+        "confidence": 0.8,
+        "available": true,
+        "availability": "unknown"
+      }
+    }
+  ],
+  "promotions": [
+    {
+      "id": "open_prices:promo:294800",
+      "retailerId": "safeway",
+      "label": "$1.00 off with loyalty card",
+      "loyaltyRequired": true,
+      "hasUnmodelledCondition": false,
+      "amountOffCents": 100,
+      "overridePriceCents": 549
+    }
+  ],
+  "fetchedAt": "2026-08-17T15:07:53.845Z",
+  "location": {
+    "label": "94043, Mountain View, Santa Clara County, California, United States",
+    "latitude": 37.4067782,
+    "longitude": -122.0873145,
+    "origin": "postal_code",
+    "postalCode": "94043",
+    "countryCode": "US"
+  },
+  "coverage": [
+    {
+      "concept": "milk",
+      "storesWithPrice": 2,
+      "observationCount": 47,
+      "priced": true
+    },
+    {
+      "concept": "eggs",
+      "storesWithPrice": 2,
+      "observationCount": 19,
+      "priced": true
+    },
+    {
+      "concept": "bread",
+      "storesWithPrice": 1,
+      "observationCount": 22,
+      "priced": true
+    }
+  ],
+  "unpricedConcepts": [],
+  "failures": [],
+  "partial": false,
+  "rejectedForStoreScope": 0,
+  "attributions": [
+    {
+      "name": "Open Food Facts — Open Prices",
+      "url": "https://prices.openfoodfacts.org",
+      "licence": "ODbL 1.0",
+      "notice": "Price data from Open Food Facts Open Prices contributors, ODbL 1.0."
+    }
+  ]
+}

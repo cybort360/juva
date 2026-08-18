@@ -1,0 +1,11 @@
+node_modules
+.expo
+.tmp-domain
+services/api/.tmp-api
+dist
+web-build
+android
+ios
+package-lock.json
+preview
+expo-env.d.ts

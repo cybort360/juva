@@ -1,0 +1,15 @@
+# Onboarding: area, radius, stores, transport, brand flexibility, budget priority.
+appId: com.juva.mobile.demo
+---
+- clearState
+- launchApp
+- assertVisible: 'SHOP SMARTER AROUND YOU'
+# Each step is a Continue; the last one commits and lands on the composer.
+- repeat:
+    times: 5
+    commands:
+      - tapOn: 'Continue'
+- assertVisible: 'What matters more on a normal week?'
+- tapOn: 'Balanced'
+- tapOn: 'Start saving'
+- assertVisible: 'What do you need?'

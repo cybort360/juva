@@ -1,0 +1,20 @@
+# The paywall trigger. Asserts the offer quotes a computed figure and that the free plan
+# was shown first — never that a purchase happened.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Use the example: Milk, eggs, rice, chicken, bread, cereal'
+- tapOn: 'Build my basket'
+- tapOn: 'Find the best basket'
+- assertVisible:
+    text: 'Your plan'
+    timeout: 30000
+# The free single-store plan is shoppable before any offer appears.
+- scrollUntilVisible:
+    element: 'WORTH KNOWING'
+    direction: DOWN
+- assertVisible: 'in savings with a smarter multi-store plan'
+- tapOn: 'See Juva Plus'
+- assertVisible: 'Juva Plus'
+# Not-yet-live features are named on the paywall rather than sold.
+- assertVisible: 'Background price alerts are not live yet'

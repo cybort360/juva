@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "juva-web",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["expo", "start", "--web", "--port", "8081"],
+      "port": 8081
+    },
+    {
+      "name": "juva-expo-go",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["expo", "start", "--lan", "--port", "8082", "--go", "--clear"],
+      "port": 8082
+    },
+    {
+      "name": "juva-web-export",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "dist", "-l", "8124", "-s"],
+      "port": 8124
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# Restore purchases with nothing to restore. The honest message is the assertion.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Juva Space'
+- tapOn: 'Subscription'
+- assertVisible: 'YOUR PLAN'
+- tapOn: 'Restore purchases'
+- assertVisible:
+    text: 'No active Juva Plus purchase'
+    timeout: 20000

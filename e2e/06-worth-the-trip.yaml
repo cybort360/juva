@@ -1,0 +1,20 @@
+# Worth the Trip must genuinely re-plan, not restyle the same numbers.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Use the example: Milk, eggs, rice, chicken, bread, cereal'
+- tapOn: 'Build my basket'
+- tapOn: 'Find the best basket'
+- scrollUntilVisible:
+    element: 'MAXIMUM STORES'
+    direction: DOWN
+    timeout: 30000
+# Constraining to one store must change the plan and its explanation.
+- tapOn: 'Plan with up to 1 store'
+- assertVisible:
+    text: 'up to 1 store'
+    timeout: 20000
+- tapOn: 'Plan with up to 2 stores'
+- assertVisible:
+    text: 'up to 2 stores'
+    timeout: 20000

@@ -1,0 +1,15 @@
+# Switching between recommended, one-stop and cheapest.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Use the example: Milk, eggs, rice, chicken, bread, cereal'
+- tapOn: 'Build my basket'
+- tapOn: 'Find the best basket'
+- assertVisible:
+    text: 'OTHER WAYS TO SHOP'
+    timeout: 30000
+- scrollUntilVisible:
+    element: 'ONE STOP'
+    direction: DOWN
+- tapOn: 'ONE STOP'
+- assertVisible: 'Everything in one trip'

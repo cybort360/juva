@@ -1,0 +1,11 @@
+# Retailer search progress. Demo market, so the stage copy is deterministic.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Use the example: Milk, eggs, rice, chicken, bread, cereal'
+- tapOn: 'Build my basket'
+- tapOn: 'Find the best basket'
+# Never exposes model chain-of-thought, only named stages.
+- assertVisible:
+    text: 'JUVA OPTIMIZED'
+    timeout: 30000

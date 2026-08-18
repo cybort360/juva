@@ -1,0 +1,32 @@
+# Receipt verification via the manual fallback, which needs no camera or extraction API.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Use the example: Milk, eggs, rice, chicken, bread, cereal'
+- tapOn: 'Build my basket'
+- tapOn: 'Find the best basket'
+- scrollUntilVisible:
+    element: 'MAXIMUM STORES'
+    direction: DOWN
+    timeout: 30000
+- tapOn: 'Plan with up to 1 store'
+- scrollUntilVisible:
+    element: 'Shop this plan'
+    direction: UP
+- tapOn: 'Shop this plan'
+- scrollUntilVisible:
+    element: 'SHOP · GROVE MARKET'
+    direction: DOWN
+- tapOn: 'VERIFY'
+- assertVisible: 'What did you actually pay?'
+- tapOn:
+    id: 'Receipt total for Grove Market'
+- inputText: '30.44'
+- tapOn: 'Add'
+- assertVisible: 'TYPED TOTAL'
+# A typed total is provenance, and is never described as a read receipt.
+- assertVisible: 'You typed this total'
+- tapOn: 'Verify my trip'
+- assertVisible: 'RECEIPT CHECK COMPLETE'
+- assertVisible: 'Expected total'
+- assertVisible: 'Verified savings'

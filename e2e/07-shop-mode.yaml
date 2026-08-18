@@ -1,0 +1,30 @@
+# Shop Mode: collect by tap and by swipe, and confirm the two directions differ.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Use the example: Milk, eggs, rice, chicken, bread, cereal'
+- tapOn: 'Build my basket'
+- tapOn: 'Find the best basket'
+- scrollUntilVisible:
+    element: 'MAXIMUM STORES'
+    direction: DOWN
+    timeout: 30000
+# One store keeps the plan free, so Shop Mode is reachable without a subscription.
+- tapOn: 'Plan with up to 1 store'
+- scrollUntilVisible:
+    element: 'Shop this plan'
+    direction: UP
+- tapOn: 'Shop this plan'
+- assertVisible: 'NOW SHOPPING'
+- assertVisible: '0/6 collected'
+# Tap collects.
+- tapOn:
+    text: 'Whole Milk'
+- assertVisible: '1/6 collected'
+# Swiping left must SKIP, not collect. This is the regression that shipped broken once:
+# a fast drag was read as a tap and collected the item instead.
+- swipe:
+    from: { text: 'Large Grade A Eggs' }
+    direction: LEFT
+- assertVisible: 'SKIPPED'
+- assertVisible: '1/6 collected'

@@ -1,0 +1,54 @@
+name: Build
+
+# Store builds run through EAS rather than on a runner: the credentials live in Expo's
+# credential store, so no keystore or signing certificate is ever committed here.
+#
+# Manual dispatch only. A release build is an outward-facing act and should be a decision
+# someone makes, not a side effect of a push.
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: Platform to build
+        required: true
+        default: android
+        type: choice
+        options: [android, ios, all]
+      profile:
+        description: EAS build profile
+        required: true
+        default: preview
+        type: choice
+        options: [preview, production]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - uses: expo/expo-github-action@v8
+        with:
+          eas-version: latest
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install
+        run: npm ci
+
+      # The same gate as `validate`. A build that has not passed it should not exist.
+      - name: Validate before building
+        run: npm run validate
+
+      - name: Build
+        env:
+          # Inputs are choice-typed and therefore constrained to the options above, but
+          # they still go through the environment rather than into the command string.
+          PLATFORM: ${{ inputs.platform }}
+          PROFILE: ${{ inputs.profile }}
+        run: eas build --non-interactive --no-wait --platform "$PLATFORM" --profile "$PROFILE"

@@ -1,0 +1,15 @@
+# Optimization output: a total, a saving, and provenance that says DEMO not LIVE.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Use the example: Milk, eggs, rice, chicken, bread, cereal'
+- tapOn: 'Build my basket'
+- tapOn: 'Find the best basket'
+- assertVisible:
+    text: 'Your plan'
+    timeout: 30000
+- assertVisible: 'BEST FOR YOU'
+- assertVisible: 'YOU SAVE'
+# Demo prices must never be labelled live.
+- assertVisible: 'DEMO'
+- assertNotVisible: 'LIVE'

@@ -1,0 +1,61 @@
+name: Validate
+
+# Every gate that must pass before a release. Ordered cheapest-first inside the
+# `validate` script, so a formatting slip fails in seconds rather than after the suite.
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Install API dependencies
+        run: npm --prefix services/api ci
+
+      # `.env` is gitignored and absent in CI. Every check below must pass without it —
+      # that is the same "launchable with nothing configured" property the app itself has.
+      - name: Format
+        run: npm run format:check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Domain tests
+        run: npm run test
+
+      - name: API tests
+        run: npm run test:api
+
+      - name: Secret scan
+        run: npm run secrets
+
+      - name: Dependency audit
+        run: npm run audit
+
+      - name: Expo Doctor
+        run: npx expo-doctor
+
+      # Proves the app still bundles. A type error can pass tsc and still fail Metro.
+      - name: Web bundle
+        run: npx expo export --platform web --output-dir dist

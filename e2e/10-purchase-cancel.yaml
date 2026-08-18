@@ -1,0 +1,22 @@
+# Purchase cancellation. Requires a RevenueCat Test Store key; skip otherwise.
+# Asserts that dismissing the store sheet leaves the shopper on Free with no error.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Use the example: Milk, eggs, rice, chicken, bread, cereal'
+- tapOn: 'Build my basket'
+- tapOn: 'Find the best basket'
+- scrollUntilVisible:
+    element: 'WORTH KNOWING'
+    direction: DOWN
+    timeout: 30000
+- tapOn: 'See Juva Plus'
+- runFlow:
+    when:
+      visible: 'Continue'
+    commands:
+      - tapOn: 'Continue'
+      # Cancel at the store sheet. A cancel is not a failure and must not read as one.
+      - pressKey: Back
+      - assertNotVisible: 'Purchase failed'
+      - assertVisible: 'Juva Plus'

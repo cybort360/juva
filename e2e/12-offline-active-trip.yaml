@@ -1,0 +1,28 @@
+# An active trip must survive going offline: the checklist is local state, and a plan
+# already made is not re-fetched to be shopped.
+appId: com.juva.mobile.demo
+---
+- launchApp
+- tapOn: 'Use the example: Milk, eggs, rice, chicken, bread, cereal'
+- tapOn: 'Build my basket'
+- tapOn: 'Find the best basket'
+- scrollUntilVisible:
+    element: 'MAXIMUM STORES'
+    direction: DOWN
+    timeout: 30000
+- tapOn: 'Plan with up to 1 store'
+- scrollUntilVisible:
+    element: 'Shop this plan'
+    direction: UP
+- tapOn: 'Shop this plan'
+- assertVisible: 'works offline once trip starts'
+- setAirplaneMode: enabled
+- tapOn:
+    text: 'Whole Milk'
+- assertVisible: '1/6 collected'
+# Backgrounding and returning offline must not lose the trip.
+- pressKey: Home
+- launchApp
+- assertVisible: 'NOW SHOPPING'
+- assertVisible: '1/6 collected'
+- setAirplaneMode: disabled
