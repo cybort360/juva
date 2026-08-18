@@ -58,4 +58,4 @@ under their licences (ODbL). Those projects do not endorse Juva.
 
 ## Contact
 
-cybort360@gmail.com
+support.juva@protonmail.com

@@ -1,6 +1,6 @@
 # Juva support
 
-**Contact:** cybort360@gmail.com — we aim to reply within two working days.
+**Contact:** support.juva@protonmail.com — we aim to reply within two working days.
 
 This page is the support URL for the App Store and Play listings. Publish it at a stable
 URL before submitting; the store rejects a placeholder.

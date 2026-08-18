@@ -95,4 +95,4 @@ Juva is not directed at children and does not knowingly collect data from anyone
 ## Changes and contact
 
 Material changes will be reflected here with a new date. Questions, or a data request:
-**cybort360@gmail.com**.
+**support.juva@protonmail.com**.
